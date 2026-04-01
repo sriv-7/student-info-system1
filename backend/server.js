@@ -5,7 +5,9 @@ const cors = require('cors');
 
 const studentRoutes = require('./routes/studentRoutes');
 
-dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 const app = express();
 
